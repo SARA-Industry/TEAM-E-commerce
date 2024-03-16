@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact with Us</title>
+    <style>
+
+ #contact{
+    display: flex;
+    justify-content:center;
+    background-color: lightslategray;
+    margin: 0 27%;
+    width: fit-content;
+    border: 3px solid black;
+ }       
+   
+.Cheader{
+    font-size: 3rem ;
+    display: flex;
+    justify-content:center;
+    text-decoration: underline overline;
+    margin-top: 3vh;
+}
+
+.form .form-details {
+    padding-left: 5%;
+}
+
+.form .form-details input[type="text"],
+.form .form-details input[type="email"] {
+    padding: 15px 15px;
+    color: var(--grey);
+    outline: none;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+.form .form-details textarea {
+    padding: 10px 10px;
+    color: var(--grey);
+    outline: none;
+    border: 1px solid black;
+    font-size: 20px;
+    resize: none;
+    margin-right: 40px;
+    width: 500px;
+}
+
+.form .form-details button {
+    padding: 15px 25px;
+    color: var(--white);
+    font-weight: 500;
+    /* background:; */
+    outline: none;
+    border: none;
+    margin: 15px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.form .form-details button:hover {
+    padding: 15px 25px;
+    font-weight: 500;
+    margin: 15px;
+    font: 14px solid bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: 3px solid black;
+}
+    </style>
+</head>
+<body>
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+    <section id="contact">
+        <form action="https://formspree.io/f/mnqejdrv" method="POST">
+            <h class="Cheader">Contact Us</h><br>
+            <div class="form">
+                <div class="form-details">
+                  <h1 id="fill"> Name : <input type="text" name="name" id="name" placeholder="Name" required></h1>
+                  <h1 id="fill"> Email : <input type="email" name="email" id="email" placeholder="Email" required></h1><br>
+                  <h1 id="fill">Message :  <br><textarea name="message" id="message" cols="52" rows="7" placeholder="Message" required></textarea></h1><br>
+                    <button>SEND MESSAGE</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+</body>
+</html>
